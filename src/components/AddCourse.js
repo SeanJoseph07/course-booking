@@ -20,7 +20,8 @@ export default function AddCourse({fetchData}) {
 	const addCourse = (e) => {
 		e.preventDefault();
 
-		fetch('https://one-stop-ecommerce.herokuapp.com/courses/create', {
+		// fetch('https://one-stop-ecommerce.herokuapp.com/courses/create', {
+		fetch('https://localhost:4000/courses/create', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

@@ -42,7 +42,8 @@ export default function Login() {
 	function authentication(e) {
 		e.preventDefault();
 
-		fetch('http://https://one-stop-ecommerce.herokuapp.com/users/login', {
+		// fetch('http://https://one-stop-ecommerce.herokuapp.com/users/login', {
+		fetch('http://https://localhost:4000/users/login', {
 			method: 'POST', 
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
