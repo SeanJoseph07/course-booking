@@ -18,7 +18,7 @@ export default function SpecificCourse() {
 
 	useEffect(() => {
 
-		fetch(`http://localhost:4000/courses/${ courseId}`)
+		fetch(`http://https://one-stop-ecommerce.herokuapp.com/courses/${ courseId}`)
 		.then(res => res.json())
 		.then(data => {
 			setName(data.name)
@@ -34,7 +34,7 @@ export default function SpecificCourse() {
 	//enroll function
 	const enroll = (courseId) => {
 
-		fetch('http://localhost:4000/users/enroll', {
+		fetch('http://https://one-stop-ecommerce.herokuapp.com/users/enroll', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

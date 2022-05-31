@@ -42,7 +42,7 @@ export default function Login() {
 	function authentication(e) {
 		e.preventDefault();
 
-		fetch('http://localhost:4000/users/login', {
+		fetch('http://https://one-stop-ecommerce.herokuapp.com/users/login', {
 			method: 'POST', 
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
@@ -65,7 +65,7 @@ export default function Login() {
 					text: 'You are now logged in!'
 				})
 				//get user's details from our token
-				fetch('http://localhost:4000/users/details', {
+				fetch('http://https://one-stop-ecommerce.herokuapp.com/users/details', {
 					headers: {
 						Authorization: `Bearer ${data.accessToken}`
 					}
