@@ -18,7 +18,7 @@ export default function SpecificCourse() {
 
 	useEffect(() => {
 
-		fetch(`https://one-stop-ecommerce.herokuapp.com/courses/${ courseId}`)
+		fetch(`https://b176-course-geass.herokuapp.com/courses/${ courseId}`)
 		// fetch(`http://localhost:4000/courses/${ courseId}`)
 		.then(res => res.json())
 		.then(data => {
@@ -35,7 +35,7 @@ export default function SpecificCourse() {
 	//enroll function
 	const enroll = (courseId) => {
 
-		fetch('https://one-stop-ecommerce.herokuapp.com/users/enroll', {
+		fetch('https://b176-course-geass.herokuapp.com/users/enroll', {
 		// fetch('http://localhost:4000/users/enroll', {
 			method: 'POST',
 			headers: {

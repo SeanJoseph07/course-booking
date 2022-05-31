@@ -16,7 +16,7 @@ export default function EditCourse({ course, fetchData }){
 
 	//function openEdit to still get the data to the form while opening the modal
 	const openEdit = (courseId) => {
-		fetch(`https://one-stop-ecommerce.herokuapp.com/courses/${ courseId }`)
+		fetch(`https://b176-course-geass.herokuapp.com/courses/${ courseId }`)
 		// fetch(`http://localhost:4000/courses/${ courseId }`)
 		.then(res => res.json())
 		.then(data => {
@@ -43,7 +43,7 @@ export default function EditCourse({ course, fetchData }){
 	const editCourse = (e) => {
 		e.preventDefault();
 
-		fetch(`https://one-stop-ecommerce.herokuapp.com/courses/${ courseId }`, {
+		fetch(`https://b176-course-geass.herokuapp.com/courses/${ courseId }`, {
 		// fetch(`http://localhost:4000/courses/${ courseId }`, {
 			method: 'PUT',
 			headers: {

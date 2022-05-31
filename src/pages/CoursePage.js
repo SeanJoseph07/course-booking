@@ -9,7 +9,7 @@ export default function CoursePage() {
 	const [ allCourses, setAllCourses ] = useState([])
 
 	const fetchData = () => {
-		fetch('https://one-stop-ecommerce.herokuapp.com/courses/all')
+		fetch('https://b176-course-geass.herokuapp.com/courses/all')
 		// fetch('http://localhost:4000/courses/all')
 		.then(res => res.json())
 		.then(data => {
