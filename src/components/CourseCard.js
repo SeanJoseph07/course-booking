@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import {Card, Button} from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default function CourseCard({courseProp}) {
 
@@ -9,32 +10,32 @@ export default function CourseCard({courseProp}) {
 
 
 	//Deconstruct the course properties into their own variables
-	const {name, description, price} = courseProp;
+	const { _id, name, description, price} = courseProp;
 
 	//Use the state hook for this component to be able to store its value
 	//state are used to keep track of information related to individual components
 
 	//Syntax: 
 		//const [CurrentValue(getter), UpdatedValue(setter)] = useState(initialGetterValue)
-	const [count, setCount] = useState(0);
+	// const [count, setCount] = useState(0);
 	//set the available seats for enrollees
-	const [seat, setSeat] = useState(30);
+	// const [seat, setSeat] = useState(30);
 
 	//for the enable/disable of enroll button
-	const [isOpen, setIsOpen] = useState(true);
+	// const [isOpen, setIsOpen] = useState(true);
 
-	useEffect(() => {
+	/*useEffect(() => {
 		if(seat === 0){
 			setIsOpen(false)
 		}
-	}, [seat])
+	}, [seat])*/
 
-	function enroll() {
+	/*function enroll() {
 		setCount(count + 1);
 		console.log('Enrollees' + count);
 		setSeat(seat - 1);
 		console.log(`Seats available ${seat}`);
-	}
+	}*/
 
 	/*function enroll() {
 		if (seat > 0){
@@ -59,16 +60,18 @@ export default function CourseCard({courseProp}) {
 				<Card.Subtitle>Price:</Card.Subtitle>
 				<Card.Text>Php {price}</Card.Text>
 
-				<Card.Text>Enrollees: {count}</Card.Text>
-				<Card.Text>Seats Available: {seat}</Card.Text>
+				{/*<Card.Text>Enrollees: {count}</Card.Text>
+				<Card.Text>Seats Available: {seat}</Card.Text>*/}
 
-				{ isOpen ? 
+				<Button variant="primary" as={ Link } to={`/courses/${_id}`}>Details</Button>
+
+				{/*{ isOpen ? 
 					<Button variant="primary" onClick={enroll}>Enroll</Button>
 
 					:
 
 					<Button variant="primary" onClick={enroll} disabled>Enroll</Button>
-				}
+				}*/}
 
 			</Card.Body>
 		</Card>

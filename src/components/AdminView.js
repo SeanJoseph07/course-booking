@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import AddCourse from './AddCourse';
+import EditCourse from './EditCourse';
+import ArchiveCourse from './ArchiveCourse';
 
 
 export default function AdminView(props) {
@@ -21,6 +23,12 @@ export default function AdminView(props) {
 					<td>{course.price}</td>
 					<td className={course.isActive ? "text-success" : "text-danger"}>
 						{course.isActive ? "Available" : "Unavailable"}
+					</td>
+					<td className="text-center">
+						<EditCourse course={course._id} fetchData={fetchData}/>
+					</td>
+					<td className="text-center">
+						<ArchiveCourse course={course._id} isActive={course.isActive} fetchData={fetchData}/>
 					</td>
 				</tr>
 				)
@@ -45,7 +53,7 @@ export default function AdminView(props) {
 						<th>DESCRIPTION</th>
 						<th>PRICE</th>
 						<th>AVAILABILITY</th>
-						<th>ACTIONS</th>
+						<th colSpan="2">ACTIONS</th>
 					</tr>
 				</thead>
 
@@ -58,3 +66,5 @@ export default function AdminView(props) {
 
 		)
 }
+
+// parseFloat(course.price).toFixed(2)
